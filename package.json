@@ -1,38 +1,22 @@
 {
-  "name": "savjeecoin",
-  "version": "1.0.1",
-  "description": "Simple Blockchain implementation in Javascript. For educational purposes only.",
-  "keywords": [
-    "blockchain",
-    "transactions",
-    "education"
-  ],
-  "main": "src/blockchain.js",
+  "name": "javascriptblockchain",
+  "version": "1.0.0",
+  "description": "GIT cho \"# javascriptBlockchain\" >> README.md git init git add README.md git commit -m \"first commit\" git branch -M main git remote add origin https://github.com/PaulAyling/javascriptBlockchain.git git push -u origin main",
+  "main": "main.js",
   "scripts": {
-    "test": "nyc mocha tests/*.js",
-    "lint": "eslint src/** tests/**",
-    "coverage": "npm run test && nyc report --reporter=text-lcov | coveralls"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Xavier Decuyper <hi@savjee.be>",
-  "license": "MIT",
-  "repository": "github:SavjeeTutorials/SavjeeCoin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulAyling/javascriptBlockchain.git"
+  },
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SavjeeTutorials/SavjeeCoin/issues"
+    "url": "https://github.com/PaulAyling/javascriptBlockchain/issues"
   },
-  "homepage": "https://github.com/SavjeeTutorials/SavjeeCoin",
+  "homepage": "https://github.com/PaulAyling/javascriptBlockchain#readme",
   "dependencies": {
-    "debug": "^4.1.1",
-    "elliptic": "^6.5.1"
-  },
-  "devDependencies": {
-    "coveralls": "^3.0.6",
-    "eslint": "^6.5.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^6.2.1",
-    "nyc": "^14.1.1"
+    "crypto-js": "^4.0.0"
   }
 }
