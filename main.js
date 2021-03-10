@@ -39,6 +39,32 @@ class Blockchain {
     newBlock.hash = newBlock.calculateHash();
     this.chain.push(newBlock);
   }
+  isChainValid() {
+    for (let i = 1; i < this.chain.length; i++) {
+      const currentBlock = this.chain[i];
+      const previousBlock = this.chain[i - 1];
+
+      if (currentBlock.hash !== currentBlock.calculateHash()) {
+        return false;
+      }
+      if (currentBlock.previousHash !== previousBlock.hash) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
-// we got to 7:20
-//https://www.youtube.com/watch?v=zVqczFZr124
+let paulCoin = new Blockchain();
+paulCoin.addBlock(new Block(1, '03/03/2021', { amount: 4 }));
+paulCoin.addBlock(new Block(1, '03/03/2021', { amount: 10 }));
+
+console.log(JSON.stringify(paulCoin, null, 4));
+console.log('isChainValid?', paulCoin.isChainValid());
+
+paulCoin.chain[1].data = { amount: 100 };
+paulCoin.chain[1].hash = paulCoin.chain[1].calculateHash();
+
+
+console.log(JSON.stringify(paulCoin, null, 4));
+
+console.log('isChainValid?', paulCoin.isChainValid());
