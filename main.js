@@ -9,7 +9,7 @@ const myWalletAddress = myKey.getPublic('hex');
 let paulCoin = new Blockchain();
 const tx1 = new Transaction(myWalletAddress, 'public key goes here', 10);
 tx1.signTransaction(myKey);
-paulCoin.addTransaction(tx1)
+paulCoin.addTransaction(tx1);
 
 console.log('/n Starting the miner.......');
 paulCoin.minePendingTransactions(myWalletAddress);
@@ -18,7 +18,6 @@ console.log('\n Balance of myWallet', paulCoin.getBalanceOfAddress(myWalletAddre
 
 console.log('/n Starting the miner again ......');
 paulCoin.minePendingTransactions(myWalletAddress);
-
 
 // console.log('----------------------------------------------');
 console.log('Entire Blockchian', paulCoin.chain);
